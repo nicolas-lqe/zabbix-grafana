@@ -1,0 +1,64 @@
+version: '3.5'
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbixpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - zbx_net
+
+  zabbix-server:
+    image: zabbix/zabbix-server-mysql:alpine-6.4-latest
+    environment:
+      DB_SERVER_HOST: mysql
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbixpass
+    depends_on:
+      - mysql
+    ports:
+      - "10051:10051"
+    networks:
+      - zbx_net
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-mysql:alpine-6.4-latest
+    environment:
+      DB_SERVER_HOST: mysql
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbixpass
+      ZBX_SERVER_HOST: zabbix-server
+      PHP_TZ: America/Argentina/Buenos_Aires
+    depends_on:
+      - mysql
+      - zabbix-server
+    ports:
+      - "8080:8080"
+    networks:
+      - zbx_net
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    depends_on:
+      - zabbix-server
+    networks:
+      - zbx_net
+
+volumes:
+  mysql-data:
+  grafana-storage:
+
+networks:
+  zbx_net:
+    driver: bridge
