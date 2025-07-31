@@ -26,6 +26,7 @@ services:
       - "10051:10051"
     networks:
       - zbx_net
+    ZBX_STARTWAIT: 30
 
   zabbix-web:
     image: zabbix/zabbix-web-nginx-mysql:alpine-6.4-latest
