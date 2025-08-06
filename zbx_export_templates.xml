@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>7.0</version>
+    <template_groups>
+        <template_group>
+            <uuid>65e9e208adfb428082a27a8567c6f0e1</uuid>
+            <name>Network Devices</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>867746e7a7754e49ace431f1245f1502</uuid>
+            <template>Template Mikrotik ECOM Completa</template>
+            <name>Template Mikrotik ECOM Completa</name>
+            <templates>
+                <template>
+                    <name>Advanced Template Net Mikrotik SNMPv2</name>
+                </template>
+                <template>
+                    <name>Template MikroTik Valores Opticos ECOM</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Network Devices</name>
+                </group>
+            </groups>
+        </template>
+    </templates>
+</zabbix_export>

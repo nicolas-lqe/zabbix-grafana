@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<zabbix_export version="6.0">
+  <templates>
+    <template>
+      <template>Template_SNMP_Huawei_8000M1A</template>
+      <name>Template SNMP Huawei 8000M1A</name>
+      <description>Template para monitorear router Huawei 8000 M1A vía SNMP</description>
+      <groups>
+        <group name="Templates/Network Devices"/>
+      </groups>
+      <applications/>
+      <items>
+        <item>
+          <name>CPU Usage</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7</snmp_oid>
+          <key>hw.cpu.usage</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>%</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>Memory Usage</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.1.1.8</snmp_oid>
+          <key>hw.memory.usage</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>%</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>System Uptime</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
+          <key>system.uptime</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>uptime</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>Voltage</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.10.1.8</snmp_oid>
+          <key>hw.voltage</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>V</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>Temperature</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.10.1.6</snmp_oid>
+          <key>hw.temperature</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>C</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>Rx Optical Power</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.10.1.28</snmp_oid>
+          <key>hw.rx.power</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>dBm</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+        <item>
+          <name>Tx Optical Power</name>
+          <type>4</type>
+          <snmp_oid>1.3.6.1.4.1.2011.5.25.31.1.1.10.1.27</snmp_oid>
+          <key>hw.tx.power</key>
+          <delay>60s</delay>
+          <history>7d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <units>dBm</units>
+          <preprocessing/>
+          <applications/>
+        </item>
+      </items>
+    </template>
+  </templates>
+</zabbix_export>

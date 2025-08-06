@@ -1,0 +1,14 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 65e9e208adfb428082a27a8567c6f0e1
+      name: 'Network Devices'
+  templates:
+    - uuid: 867746e7a7754e49ace431f1245f1502
+      template: 'Template Mikrotik ECOM Completa'
+      name: 'Template Mikrotik ECOM Completa'
+      templates:
+        - name: 'Advanced Template Net Mikrotik SNMPv2'
+        - name: 'Template MikroTik Valores Opticos ECOM'
+      groups:
+        - name: 'Network Devices'
